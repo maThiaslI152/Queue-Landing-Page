@@ -1,3 +1,76 @@
-.nav {
-    background-color: rgba(236, 0, 140, 1);
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #ff0099; /* Pink background */
+    color: #fff;
+}
+
+.navbar-left .logo {
+    height: 50px;
+}
+
+.navbar-center {
+    display: flex;
+    list-style: none;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.navbar-center li {
+    margin: 0 20px;
+}
+
+.navbar-center a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.user-info {
+    text-align: right;
+    margin-right: 15px;
+}
+
+.user-name {
+    font-weight: bold;
+    display: block;
+}
+
+.user-id {
+    font-size: 0.9rem;
+}
+
+.logout-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.logout-button:hover {
+    background-color: #555;
 }
