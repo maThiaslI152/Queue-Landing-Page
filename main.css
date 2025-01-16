@@ -1,4 +1,3 @@
-/* General Reset */
 * {
     margin: 0;
     padding: 0;
@@ -7,6 +6,7 @@
 
 body {
     font-family: Arial, sans-serif;
+    background-color: #fff;
 }
 
 .navbar {
@@ -14,8 +14,9 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #ff0099; /* Pink background */
+    background-color: #ff0099;
     color: #fff;
+    position: relative;
 }
 
 .navbar-left .logo {
@@ -40,19 +41,34 @@ body {
     font-weight: bold;
 }
 
+.burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.burger .line {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+}
+
 .navbar-right {
     display: flex;
     align-items: center;
 }
 
 .user-info {
-    text-align: right;
     margin-right: 15px;
+    text-align: right;
 }
 
 .user-name {
     font-weight: bold;
-    display: block;
 }
 
 .user-id {
@@ -73,4 +89,71 @@ body {
 
 .logout-button:hover {
     background-color: #555;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .burger {
+        display: flex;
+    }
+
+    .navbar-center {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        background-color: #ff0099;
+        z-index: 10;
+        padding: 10px 0;
+        transition: all 0.7s ease;
+    }
+
+    .navbar-center.active {
+        display: flex;
+    }
+
+    .navbar-center li {
+        margin: 13px;
+        text-align: center;
+    }
+
+    .navbar-right {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        text-align: right;
+    }
+
+    .user-info {
+        margin-bottom: 5px;
+        margin-right: auto;
+    }
+
+    .user-name {
+        font-weight: bold;
+        display: block;
+    }
+
+    .user-id {
+        font-size: 0.9rem;
+        display: block;
+    }
+
+    .logout-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    }
+
+    .logout-button:hover {
+        background-color: #555;
+    }
 }
